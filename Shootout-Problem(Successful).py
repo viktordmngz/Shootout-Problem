@@ -56,9 +56,10 @@ def shootout(n, a, b, c):
     else:
       if i > 0:
         i -= 1
-        print("Nobody won, redo\t", i)
+        #You can comment this out if you want, was used for personal debugging in first code
+        #print("Nobody won, redo\t", i)
       else:
         i = -1
-        print("Nobody won, redo\t", i)
+        #print("Nobody won, redo\t", i)
     i += 1
   return totals
