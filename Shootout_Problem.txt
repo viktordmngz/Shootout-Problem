@@ -1,0 +1,41 @@
+def shootout(n, a, b, c, totals):
+     i = 0
+     G_O = False
+     while i < n:
+             if random.random() < a:
+                     print(i)
+                     if random.random() < c:
+                             totals[2] += 1
+                             print(totals)
+                     else:
+                             totals[0] += 1
+                             print(totals)
+             elif random.random() < b:
+                     print(i)
+                     while G_O == False:
+                             if random.random() < a:
+                                     totals[0] += 1
+                                     print(totals)
+                                     G_O = True
+                             elif random.random() < b:
+                                     totals[1] += 1
+                                     print(totals)
+                                     G_O = True
+             elif random.random() < c:
+                     print(i)
+                     while G_O == False:
+                             if random.random() < b:
+                                     totals[1] += 1
+                                     print(totals)
+                                     G_O = True
+                             elif random.random() < c:
+                                     totals[2] += 1
+                                     print(totals)
+                                     G_O = True
+             else:
+                     if i > 0:
+                             i -= 1
+                             print("Nobody won, redo\t", i)
+             #print(i)
+             i += 1
+     return totals
