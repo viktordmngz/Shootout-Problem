@@ -19,26 +19,27 @@ def shootout(n, a, b, c):
       if random.random() < c:
         #if c hits a, the game is over
         totals[2] += 1
-        print(totals)
+        #if you want to see the totals as the sim runs, uncomment the print(totals)
+        #print(totals)
       else:
         #if c misses, a hits
         #since the p(a hits) and p(c hits) are the same
         #we only have to check whether c hits, otherwise a hits
         #similar to flipping a coin
         totals[0] += 1
-        print(totals)
+        #print(totals)
     #if a misses b, and b hits c...
     elif random.random() < b:
       while G_O == False:
         #if a hits, the game is over and a wins
         if random.random() < a:
           totals[0] += 1
-          print(totals)
+          #print(totals)
           G_O = True
         #if a misses, b goes and if b hits, the game is over
         elif random.random() < b:
           totals[1] += 1
-          print(totals)
+          #print(totals)
           G_O = True
     #if a and b miss, c gets to go
     #if c hits a...
@@ -46,11 +47,11 @@ def shootout(n, a, b, c):
       while G_O == False:
         if random.random() < b:
           totals[1] += 1
-          print(totals)
+          #print(totals)
           G_O = True
         elif random.random() < c:
           totals[2] += 1
-          print(totals)
+          #print(totals)
           G_O = True
     #if nobody hits, we need to redo the round and decrement i (no negative values)
     else:
@@ -63,3 +64,6 @@ def shootout(n, a, b, c):
         #print("Nobody won, redo\t", i)
     i += 1
   return totals
+
+#to run the simulation, uncomment below
+#totals = shootout(n,a,b,c)
